@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="application.Controller.adminRemoveBooksController"
+      spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+    
+    <!-- Title -->
+    <Label text="Remove Books" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Search Bar -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Search:"/>
+        <TextField fx:id="searchField" promptText="Enter book title or author" HBox.hgrow="ALWAYS"/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+
+    <!-- TableView for books -->
+    <TableView fx:id="bookTableView" VBox.vgrow="ALWAYS" style="-fx-border-color: #ccc;">
+        <columns>
+            <!-- Select Column with CheckBox -->
+            <TableColumn fx:id="selectColumn" text="Select" prefWidth="60"/>
+            
+            <!-- Book ID Column -->
+            <TableColumn fx:id="bookIdColumn" text="Book ID" prefWidth="100"/>
+            
+            <!-- Title Column -->
+            <TableColumn fx:id="titleColumn" text="Title" prefWidth="200"/>
+            
+            <!-- Author Column -->
+            <TableColumn fx:id="authorColumn" text="Author" prefWidth="150"/>
+            
+            <!-- Physical Copies Column -->
+            <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies" prefWidth="120"/>
+            
+            <!-- E-book Available Column -->
+            <TableColumn fx:id="ebookAvailableColumn" text="E-book Available" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Action Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Remove Selected" onAction="#handleRemoveSelected" style="-fx-background-color: #ff6666; -fx-text-fill: white;"/>
+        <Button text="Back to Dashboard" onAction="#handleBack" style="-fx-background-color: #007bff; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
